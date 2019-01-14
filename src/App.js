@@ -28,11 +28,8 @@ class App extends Component {
     this.onDismiss = this.onDismiss.bind(this);
   }
   onDismiss(id){
-    function isNotId(item){
-      return item.objectID !== id;
-    }
-
-    const updatedList = this.state.list.filter(isNotId);
+    const updatedList = this.state.list.filter(item => item.objectID !== id);
+    this.setState({ list: updatedList });
   }
   render() {
     return (
